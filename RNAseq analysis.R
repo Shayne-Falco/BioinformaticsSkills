@@ -31,12 +31,12 @@ library(Rsubread)
 #all the seq files are in R project.
 #We need to find them in order to tell Rsubread aligner which files to look at. 
 #we use list.files command to look for all.fastq.gz files for this.
-fastq.files <- list.files(path = "C:/Users/Anupama Rao/Documents/R project", pattern = ".fastq.gz$", full.names = TRUE)
+fastq.files <- list.files(path = "C:/Users/shayn/Documents/GitHub/BioinformaticsSkills/data/", pattern = ".fastq.gz$", full.names = TRUE)
 fastq.files
 
 #building an index (this one here is for mouse chr. 1)
 #The command assumes the chr1 genome info for mm10 is stored in the "chr1.fa" file.
-buildindex(basename="chr1_mm10",reference="chr1.fa")
+buildindex(basename="chr1_mm10",reference="C:/Users/shayn/Documents/GitHub/BioinformaticsSkills/data/chr1.fa")
 
 #aligning reads to reference genome
 align("chr1_mm10", readfile1= fastq.files)
@@ -45,14 +45,14 @@ align("chr1_mm10", readfile1= fastq.files)
 args(align)
 
 #summary of the proportion of reads that mapped to the reference genome.
-bam.files <- list.files(path = "C:/Users/Anupama Rao/Documents/R project", pattern = ".BAM$", full.names = TRUE)
+bam.files <- list.files(path = "C:/Users/shayn/Documents/GitHub/BioinformaticsSkills/data/", pattern = ".BAM$", full.names = TRUE)
 bam.files
 
 props <- propmapped(files=bam.files)
 props
 
 # Extract quality scores
-qs <- qualityScores(filename="C:/Users/Anupama Rao/Documents/R project/SRR1552450.fastq.gz",nreads=100)
+qs <- qualityScores(filename="C:/Users/shayn/Documents/GitHub/BioinformaticsSkills/data/SRR1552450.fastq.gz",nreads=100)
 # Check dimension of qs
 dim(qs)
 # Check first few elements of qs with head
