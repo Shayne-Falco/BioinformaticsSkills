@@ -37,3 +37,4 @@
 - cd change to correct folder
 - fastqc test_udemy.fastq
 ![Untitled](https://github.com/Shayne-Falco/BioinformaticsSkills/assets/96263317/8c797a54-3c67-4f2b-a2de-21cdfcea2861)
+- java -jar trimmomatic-0.39.jar SE -threads 4 test_udemy.fastq test_trimmed.fastq TRAILING:10 -phred33
