@@ -1,2 +1,4 @@
 *.zip
 data/
+*.ht2
+*.sh

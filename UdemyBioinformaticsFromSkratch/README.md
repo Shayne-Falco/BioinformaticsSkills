@@ -38,3 +38,4 @@
 - fastqc test_udemy.fastq
 ![Untitled](https://github.com/Shayne-Falco/BioinformaticsSkills/assets/96263317/8c797a54-3c67-4f2b-a2de-21cdfcea2861)
 - java -jar trimmomatic-0.39.jar SE -threads 4 test_udemy.fastq test_trimmed.fastq TRAILING:10 -phred33
+- hisat2 -q --rna-strandness R -x  grch38_genome/grch38/genome -U test_trimmed.fastq | samtools sort -o demo_trimmed.bam
